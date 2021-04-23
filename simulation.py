@@ -33,6 +33,8 @@ n_iteration = 1000
 test1 = mask(mask_size, mask_porosity)
 test2 = mask(filter_porosity, mask_porosity)
 
+test = test1
+
 #use gaussian random selection to simulate saliva burst from mouth
 n_true = 0
 n_false = 0
