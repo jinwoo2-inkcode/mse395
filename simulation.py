@@ -31,9 +31,9 @@ n_iteration = 1000
 
 #execution
 test1 = mask(mask_size, mask_porosity)
-test2 = mask(filter_porosity, mask_porosity)
+test2 = mask(filter_object, mask_porosity)
 
-test = test1
+test = test1 #type of mask used
 
 #use gaussian random selection to simulate saliva burst from mouth
 n_true = 0
@@ -41,7 +41,7 @@ n_false = 0
 
 for _ in range(n_iteration):
     #gaussian each time iteration is run
-    #parameters: mean, stdev, size
+    #parameters of normal: mean, stdev
     x = math.floor(normal(len(test)/2, len(test)/100))
     y = math.floor(normal(len(test)/2, len(test)/100))
     if test[x][y] == 0:
@@ -49,4 +49,4 @@ for _ in range(n_iteration):
     else:
         n_true += 1
 
-print(n_true, n_false)
+print(n_true, n_false, n_true/(n_true+n_false))
