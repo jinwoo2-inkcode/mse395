@@ -23,11 +23,15 @@ def mask(dimensions, porosity):
 #required dimensions
 mask_size = np.zeros((1000,1000))
 mask_porosity = 74 #https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7410795/ modified mask
+filter_porosity = 70
+
+filter_object =  mask(np.zeros((1000,1000)), filter_porosity)
 n_iteration = 1000
 
 
 #execution
-test = mask(mask_size, mask_porosity)
+test1 = mask(mask_size, mask_porosity)
+test2 = mask(filter_porosity, mask_porosity)
 
 #use gaussian random selection to simulate saliva burst from mouth
 n_true = 0
