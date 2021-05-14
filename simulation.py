@@ -45,7 +45,16 @@ def spray_simulation(test):
     return n_true/(n_true+n_false)
 
 def mask_improvised(dimensions, porosity, pore):
-
+    """
+    creates sample mask to work with, improvised from original mask cluster
+    to create holes with certain radius
+    args:
+        dimensions: mask sample
+        porosity: porosity of sample
+        pore: pore size
+    returns:
+        Simulated porosity of sample
+    """
 
     x = len(dimensions)
     y = len(dimensions[0])
